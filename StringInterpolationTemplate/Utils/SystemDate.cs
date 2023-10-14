@@ -1,8 +1,10 @@
 ﻿using System;
 
-namespace StringInterpolationTemplate.Utils;
-
-public class SystemDate : ISystemDate
+namespace StringInterpolationTemplate.Utils
 {
-    public DateTime Now => DateTime.Now;
+
+    public class SystemDate : ISystemDate
+    {
+        public DateTime Now => DateTime.Now;
+    }
 }

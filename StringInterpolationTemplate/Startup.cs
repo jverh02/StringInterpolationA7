@@ -4,23 +4,25 @@ using Microsoft.Extensions.Logging;
 using StringInterpolationTemplate.Services;
 using StringInterpolationTemplate.Utils;
 
-namespace StringInterpolationTemplate;
-
-internal class Startup
+namespace StringInterpolationTemplate
 {
-    public IServiceProvider ConfigureServices()
+
+    internal class Startup
     {
-        IServiceCollection services = new ServiceCollection();
-
-        services.AddLogging(builder =>
+        public IServiceProvider ConfigureServices()
         {
-            builder.AddConsole();
-            builder.AddFile("app.log");
-        });
-        services.AddTransient<IStringInterpolationService, StringInterpolationService>();
-        services.AddTransient<IMainService, MainService>();
-        services.AddTransient<ISystemDate, SystemDate>();
+            IServiceCollection services = new ServiceCollection();
 
-        return services.BuildServiceProvider();
+            services.AddLogging(builder =>
+            {
+                builder.AddConsole();
+                builder.AddFile("app.log");
+            });
+            services.AddTransient<IStringInterpolationService, StringInterpolationService>();
+            services.AddTransient<IMainService, MainService>();
+            services.AddTransient<ISystemDate, SystemDate>();
+
+            return services.BuildServiceProvider();
+        }
     }
 }

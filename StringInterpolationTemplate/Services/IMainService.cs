@@ -1,6 +1,8 @@
-﻿namespace StringInterpolationTemplate.Services;
-
-public interface IMainService
+﻿namespace StringInterpolationTemplate.Services
 {
-    void Invoke();
+
+    public interface IMainService
+    {
+        void Invoke();
+    }
 }
